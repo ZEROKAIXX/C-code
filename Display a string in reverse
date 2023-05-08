@@ -1,0 +1,8 @@
+Console.Write("Enter a word: ");
+string word = Console.ReadLine();
+
+char[] chars = word.ToCharArray(); // convert the word to a character array
+Array.Reverse(chars); // reverse the character array
+string reversedWord = new string(chars); // convert the reversed character array back to a string
+
+Console.WriteLine("Reversed word: " + reversedWord);
