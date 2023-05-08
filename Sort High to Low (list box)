@@ -1,11 +1,22 @@
-List<int> numbers = new List<int>() { 5, 3, 9, 1, 7 };
+// create a list to store the numbers
+List<int> numbers = new List<int>();
 
-numbers.Sort(); // sort the list in ascending order
-numbers.Reverse(); // reverse the list to get descending order
+// add the numbers from the list box to the list
+foreach (int num in listBox1.Items)
+{
+    numbers.Add(num);
+}
 
-listBox1.Items.Clear(); // clear the list box
+// sort the numbers in descending order
+numbers.Sort();
+numbers.Reverse();
 
+// clear the list box
+listBox1.Items.Clear();
+
+// add the sorted numbers back to the list box
 foreach (int num in numbers)
 {
-    listBox1.Items.Add(num); // add each number to the list box
+    listBox1.Items.Add(num);
 }
+
