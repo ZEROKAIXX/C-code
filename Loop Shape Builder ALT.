@@ -1,0 +1,42 @@
+private void btndrawhollow_Click(object sender, EventArgs e)
+        { int size, cols;
+
+            size = (int)nudheight.Value;
+            cols = (int)nudlength.Value;
+            rtbshapes.AppendText("\n");
+
+            if (radrect.Checked == true)
+            {
+                for (int row = 1; row <= size; row++)
+                {
+                    for (int col = 1; col <= cols; col++)
+                    {
+                        if (row == 1 || row == size || col == 1 || col == cols)
+                            rtbshapes.AppendText("*\t");
+                        else
+                            rtbshapes.AppendText("\t");
+                    }
+                    rtbshapes.AppendText(Environment.NewLine);
+                }
+            }
+
+            if (radtri.Checked == true)
+            {
+                int currentRow = 1;
+                while (currentRow <= cols)
+                {
+                    int currentColumn = 1;
+                    while (currentColumn <= size)
+                    {
+                        if (currentRow == cols || currentColumn == 1 || currentColumn == currentRow)
+                            rtbshapes.AppendText("*\t");
+                        else
+                            rtbshapes.AppendText("\t");
+
+                        currentColumn++;
+                    }
+                    rtbshapes.AppendText(Environment.NewLine);
+                    currentRow++;
+                }
+            }
+        }
