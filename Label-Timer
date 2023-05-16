@@ -1,0 +1,29 @@
+public partial class Form1 : Form
+    {
+        
+        public Form1()
+        {
+            InitializeComponent();
+        }
+        int sec = 01, min = 00, hour;            //DECLARE HOURS, MINS, SEC values
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            timer.Enabled= true;    //ENABLE TIMER IN FORM
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            lbltime.Text = Convert.ToString(hour+" : "+ min + " : " + sec);    //CREATE LABEL CAPTION
+            sec++;    //INCREMENT SECONDS
+            if (sec == 60)
+            {
+                min++;    //INCREMENT SECONDS
+                sec = 1;
+            }
+            if (min == 60)
+            {
+                hour++;    //INCREMENT SECONDS
+                min = 1;
+            }
+        }
