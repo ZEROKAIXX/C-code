@@ -1,0 +1,54 @@
+private void button1_Click(object sender, EventArgs e)
+        {
+            int length, height;
+
+            length = (int)nudlength.Value;
+            height= (int)nudheight.Value;
+            rtbshapes.AppendText("\n");
+
+            if (radrect.Checked == false && radtri.Checked == false)
+            {
+                MessageBox.Show("Please select a shape");
+            }
+            else
+            { 
+                if (radtri.Checked == true) 
+                {
+                    
+                    int currentRow = 1;
+                    while (currentRow <= height)
+                    {
+                        int currentColumn = 1;
+                        while (currentColumn <= length)
+                        {
+                            if (currentColumn <= currentRow)
+                                rtbshapes.AppendText("*\t");
+                            else
+                                rtbshapes.AppendText("\t");
+
+                            currentColumn++;
+                        }
+                        rtbshapes.AppendText(Environment.NewLine);
+                        currentRow++;
+                    }      
+                }
+                
+                if (radrect.Checked == true) 
+                {
+                    rtbshapes.AppendText("\n");
+                    int currentHeight = 1;
+                    while (currentHeight <= height)
+                    {
+                        int currentLength = 1;
+                        while (currentLength <= length)
+                        {
+                            rtbshapes.AppendText("*"+"\t");
+                            currentLength++;
+                        }
+                        rtbshapes.AppendText(Environment.NewLine);
+                        currentHeight++;
+                    }
+
+                }
+            }
+  
